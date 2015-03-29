@@ -2,17 +2,17 @@
 #include <ctime>
 using namespace std;
 int first, last;
-//функция сортировки
+//С„СѓРЅРєС†РёСЏ СЃРѕСЂС‚РёСЂРѕРІРєРё
 void quicksort(int *mas, int first, int last)
 {
 int mid, count;
 int f=first, l=last;
-mid=mas[(f+l) / 2]; //вычисление опорного элемента
+mid=mas[(f+l) / 2]; //РІС‹С‡РёСЃР»РµРЅРёРµ РѕРїРѕСЂРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
 do
 {
 while (mas[f]<mid) f++;
 while (mas[l]>mid) l--;
-if (f<=l) //перестановка элементов
+if (f<=l) //РїРµСЂРµСЃС‚Р°РЅРѕРІРєР° СЌР»РµРјРµРЅС‚РѕРІ
 {
 count=mas[f];
 mas[f]=mas[l];
@@ -24,21 +24,21 @@ l--;
 if (first<l) quicksort(mas, first, l);
 if (f<last) quicksort(mas, f, last);
 }
-//главная функция
+//РіР»Р°РІРЅР°СЏ С„СѓРЅРєС†РёСЏ
 void main()
 {
 setlocale(LC_ALL,"Rus");
 int arr[(unsigned char)200], n, i;
-cout<<"\n Введите длину массива="; cin>>n;
-for (i=0; i<n; i++) //вывод массива
+cout<<"\n Р’РІРµРґРёС‚Рµ РґР»РёРЅСѓ РјР°СЃСЃРёРІР°="; cin>>n;
+for (i=0; i<n; i++) //РІС‹РІРѕРґ РјР°СЃСЃРёРІР°
 {
-cout<<"\n Введите значение["<<i<<"]=";
+cout<<"\n Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ["<<i<<"]=";
 cin>>arr[i];
 }
 
 first=0; last=n-1;
 quicksort(arr, first, last);
-cout<<endl<<"Отсортированный массив: ";
+cout<<endl<<"РћС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹Р№ РјР°СЃСЃРёРІ: ";
 for (__int8 i=0; i<n; i++) cout<<arr[i]<<" ";
 
 system("pause>>void");
